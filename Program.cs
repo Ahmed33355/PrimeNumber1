@@ -1,47 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project_._1
+public class Exercise28
 {
-    internal class Program
+    public static void Main()
     {
-        static void Main(string[] args)
+        int n, i, sum;
+        int mn, mx;
+
+        Console.Write("\n\n");
+        Console.Write("Find perfect numbers within a given number of range:\n");
+        Console.Write("------------------------------------------------------");
+        Console.Write("\n\n");
+
+        Console.Write("Input the starting range or number : ");
+        mn = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input the ending range of number : ");
+        mx = Convert.ToInt32(Console.ReadLine());
+        Console.Write("The Perfect numbers within the given range : ");
+        for (n = mn; n <= mx; n++)
         {
-            Console.WriteLine("please enter start");
-
-            int start = int.Parse(Console.ReadLine());
-            Console.WriteLine("please enter end");
-
-            int end = int.Parse(Console.ReadLine());
-
-            bool prime = true;
-
-
-            for (int x = start; x < end; x++)
+            i = 1;
+            sum = 0;
+            while (i < n)
             {
-                for (int y = 2; y < x; y++)
-                {
-                    if (x % y == 0)
-                    {
-
-                        prime = false;
-                        break;
-                    }
-                }
-                if (prime == true)
-                {
-                    Console.WriteLine(x);
-                }
-                else
-                {
-                    prime = true;
-                }
+                if (n % i == 0)
+                    sum = sum + i;
+                i++;
             }
+            if (sum == n)
+                Console.Write("{0} ", n);
         }
+        Console.Write("\n");
     }
 }
-            
-        
+
+
+
+
+
+
+
+
+
+
+
